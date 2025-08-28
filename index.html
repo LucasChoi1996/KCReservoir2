@@ -29,4 +29,302 @@
     .nav a{margin-left:18px;font-size:15px}
 
     .hero{background:linear-gradient(180deg, #F9FBFF 0%, #F2F6FC 100%);border-bottom:1px solid var(--line)}
-    .hero-inner{display:grid;g
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
+    .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+    .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:150px}
+    .kpi b{display:block;font-size:20px;color:var(--brand)}
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--brand);font-weight:600}
+    .btn.primary{background:var(--brand);color:#fff}
+
+    .hero-ill{display:flex;align-items:center;justify-content:center}
+    .hero-ill .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 30px rgba(18,76,156,.08)}
+    .hero-ill img{width:100%;max-width:420px;border-radius:12px}
+
+    section{padding:48px 0}
+    h2{font-size:24px;margin:0 0 10px}
+    .sub{color:var(--muted);margin:0 0 26px}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .feature h3{margin:0 0 6px;font-size:18px}
+    .feature p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .card img{width:100%;height:160px;object-fit:cover}
+    .card .body{padding:14px}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+    th{background:#F4F7FB;color:#3B4A63}
+    tbody tr:last-child td{border-bottom:none}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    .note{font-size:13px;color:var(--muted)}
+
+    footer{background:#0E1420;color:#C7D2E4}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
+    .foot h4{margin:0 0 8px;color:#fff}
+    .foot p,.foot a{color:#C7D2E4}
+    .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
+
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .features,.grid,.two-col,.foot{grid-template-columns:1fr}
+      .card img{height:180px}
+      header .nav{height:56px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "康錡實業有限公司",
+    "url": "https://lucaschoi1996.github.io/KCReservoir2/",
+    "logo": "https://lucaschoi1996.github.io/KCReservoir2/assets/logo-512.png",
+    "address": {"@type":"PostalAddress","addressCountry":"TW","addressRegion":"新北市","addressLocality":"八里區","streetAddress":"頂寮一街2號"},
+    "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "email": "sales@example.com"}]
+  }
+  </script>
+</head>
+<body style="background:var(--bg)">
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="/assets/logo-32.png" alt="康錡實業 logo" />
+        <span>康錡實業有限公司</span>
+      </div>
+      <nav>
+        <a href="#products">產品</a>
+        <a href="#spec">規格</a>
+        <a href="#qa">常見問題</a>
+        <a href="#contact" class="btn" style="padding:6px 10px">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Capillary Reservoir 棉管｜<span style="color:var(--brand)">高精度客製</span> × <span style="color:var(--brand)">供墨解決方案</span></h1>
+          <p>專注筆用貯墨芯（水性/酒精性/顏料/染料），以極小公差、高一致性與多纖維配方，穩定供墨、降低滲漏與閒置乾涸風險。</p>
+          <div class="kpis">
+            <div class="kpi"><b>±0.05 mm</b><span>外徑公差（典型）</span></div>
+            <div class="kpi"><b>0.14–0.16 g/ccm</b><span>體積密度（常用級）</span></div>
+            <div class="kpi"><b>300D/192F</b><span>高分纖維束選項</span></div>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="#contact">索取樣品</a>
+            <a class="btn" href="#spec">下載規格</a>
+          </div>
+        </div>
+        <div class="hero-ill">
+          <div class="card">
+            <img src="/assets/hero-reservoir.jpg" alt="棉管產品示意" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section>
+      <div class="container">
+        <h2>我們的優勢</h2>
+        <p class="sub">從材料、結構到供墨曲線，針對您的墨水與筆結構提供匹配方案。</p>
+        <div class="features">
+          <div class="feature">
+            <h3>多配方可選</h3>
+            <p>聚酯纖維＋PE膜、純聚酯、異型孔徑結構，對應水性/酒精性與染料/顏料墨水。</p>
+          </div>
+          <div class="feature">
+            <h3>極小公差</h3>
+            <p>自製治具＋檢具（GO/NO-GO）搭配三坐標抽檢，確保外徑與圓度一致。</p>
+          </div>
+          <div class="feature">
+            <h3>一致性量產</h3>
+            <p>夏季循環水溫控、纖維預處理與包裝防塵，降低批次間變異。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <div class="container">
+        <h2>主要產品</h2>
+        <p class="sub">提供標準外徑系列，亦可依圖面與供墨需求客製。</p>
+        <div class="grid">
+          <article class="card">
+            <img src="/assets/p-waterbased.jpg" alt="水性墨水用棉管" />
+            <div class="body">
+              <div class="tag">水性 / 染料</div>
+              <h3>水性專用棉管</h3>
+              <p class="note">高親水性與穩定回墨，適用白板筆、彩繪筆等。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="/assets/p-alcohol.jpg" alt="酒精墨水用棉管" />
+            <div class="body">
+              <div class="tag">酒精性 / 顏料可選</div>
+              <h3>酒精專用棉管</h3>
+              <p class="note">抗溶脹結構與膜材搭配，長期儲存滲漏風險低。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="/assets/p-custom.jpg" alt="客製化棉管" />
+            <div class="body">
+              <div class="tag">客製</div>
+              <h3>客製化配方 / 尺寸</h3>
+              <p class="note">含PE膜比例、纖維旦數與密度可調，以供墨曲線為目標設計。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spec Table -->
+    <section id="spec">
+      <div class="container">
+        <h2>常見規格</h2>
+        <p class="sub">以下為參考值；實際以您的墨水黏度、筆尖/筆管公差共同驗證為準。</p>
+        <div class="two-col">
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>常用級</th>
+                  <th>可客製範圍</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>外徑（OD）</td>
+                  <td>Ø 6.0 / 6.5 / 7.0 mm</td>
+                  <td>Ø 4.0 – 10.0 mm</td>
+                </tr>
+                <tr>
+                  <td>長度（L）</td>
+                  <td>100 / 120 / 150 mm</td>
+                  <td>50 – 200 mm</td>
+                </tr>
+                <tr>
+                  <td>體積密度</td>
+                  <td>0.14 – 0.16 g/ccm</td>
+                  <td>0.12 – 0.20 g/ccm</td>
+                </tr>
+                <tr>
+                  <td>材料</td>
+                  <td>聚酯纖維 + PE膜</td>
+                  <td>純聚酯 / 其他膜材</td>
+                </tr>
+                <tr>
+                  <td>適配墨水</td>
+                  <td>水性（染料）</td>
+                  <td>酒精性 / 顏料皆可</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="note">※ 可提供樣品與小批量試產，協助建立供墨測試曲線與壓力條件。</p>
+          </div>
+          <div>
+            <div class="card" style="padding:16px">
+              <h3 style="margin-top:0">下載 / 技術文件</h3>
+              <ul>
+                <li><a href="#">公司簡介（1頁 PDF）</a></li>
+                <li><a href="#">常見外徑與長度對照表（PDF）</a></li>
+                <li><a href="#">樣品測試流程建議（PDF）</a></li>
+              </ul>
+              <p class="note">檔案可放在 <code>/docs</code> 目錄；上傳 PDF 後把連結替換。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Q&A -->
+    <section id="qa">
+      <div class="container">
+        <h2>常見問題</h2>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q1：顏料墨水可以用嗎？</h3>
+            <p>可以。我們會依顏料粒徑、分散體系與黏度搭配較緊實的纖維結構，避免堵塞並維持回墨。</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q2：如何避免長期儲存滲漏？</h3>
+            <p>針對酒精性墨水，會提高膜材比例與優化端面封裝，並建議在夏季加強溫控與包材防滲。</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q3：能否做非常細的外徑？</h3>
+            <p>可做到 Ø4 mm 級別，但需同步評估筆管公差、內壁摩擦與筆尖結構以確保供墨穩定。</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q4：MOQ 與交期？</h3>
+            <p>標準尺寸可小量試產；量產交期依材料與產線排程而定，緊急案可協助插單。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>聯絡我們</h2>
+        <p class="sub">歡迎提供墨水資訊（溶劑系統、染料/顏料、特殊需求），我們會回覆建議棉管配方與樣品。</p>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <form action="mailto:sales@example.com" method="post" enctype="text/plain">
+              <label>公司/姓名<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>需求與墨水資訊<br />
+                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+              </label><br /><br />
+              <button class="btn primary" type="submit">送出需求</button>
+              <span class="note">（零成本方案：使用 mailto 提交。若後續要表單收件，可改用 Formspree/Static forms 免費級）</span>
+            </form>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">工廠資訊</h3>
+            <p>
+              康錡實業有限公司<br/>
+              249 新北市八里區頂寮一街2號<br/>
+              Tel：+886-2-xxxx-xxxx<br/>
+              Email：sales@example.com
+            </p>
+            <p class="note">可嵌入 Google Map iframe；若不想顯示地址，可僅留聯絡方式。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <h4>關於康錡</h4>
+        <p>我們致力於將材料工程與製程細節轉化為穩定的供墨表現，協助品牌解決白板筆、記號筆、工業筆等場景中的實際痛點。</p>
+      </div>
+      <div>
+        <h4>快速連結</h4>
+        <p><a href="#products">產品</a>・<a href="#spec">規格</a>・<a href="#qa">FAQ</a>・<a href="#contact">聯絡</a></p>
+      </div>
+      <div>
+        <h4>文件</h4>
+        <p><a href="#">公司簡介 PDF</a><br/>
+        <a href="#">規格表 PDF</a></p>
+      </div>
+    </div>
+    <div class="container copy">© <span id="y"></span> KangQi Industrial Co., Ltd. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
