@@ -14,6 +14,7 @@
       --bg:#F6F8FB;    /* 背景淺灰藍 */
       --line:#E6ECF5;  /* 分隔線 */
       --muted:#6C7A90; /* 次要文字 */
+      --ok:#0F8C64;    /* 強調綠 */
     }
 
     *{box-sizing:border-box}
@@ -33,61 +34,66 @@
     }
 
     /* 深藍色導覽列 */
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--brand);   /* 深藍背景 */
-      z-index: 50;
+    header{
+      position:sticky;
+      top:0;
+      background:var(--brand);
+      z-index:50;
     }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; /* 左邊 LOGO+menu，右邊按鈕 */
-      height: 64px;
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between; /* 左 LOGO + menu / 右 按鈕 */
+      height:64px;
     }
 
     /* LOGO */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
-    .logo img{height:28px}
-    .logo span{font-weight:700;letter-spacing:.03em;color:#fff}
-
-    /* 三個選單 */
-    .menu {
-      display: flex;
-      gap: 32px; /* ← 控制三個連結的間距 */
+    .logo img{
+      height:44px; /* 桌機 LOGO 大小 */
+      width:auto;
     }
-    .menu a {
-      color: #fff;
-      font-size: 15px;
-    }
-    .menu a:hover {
-      color: #E6ECF5;
+    .logo span{
+      font-weight:700;
+      letter-spacing:.03em;
+      color:#fff;
     }
 
-    /* 聯絡我們按鈕 */
-    .contact-btn a {
-      background: #fff;
-      color: var(--brand);
-      border-radius: 8px;
-      padding: 6px 14px;
-      margin-left: 24px;   /* 與 menu 保持距離 */
-      font-weight: 600;
-      text-decoration: none;
+    /* 左側三個選單 */
+    .menu{
+      display:flex;
+      gap:32px; /* 三個連結的間距 */
     }
-    .contact-btn a:hover {
-      background: #E6ECF5;
-      color: var(--brand);
+    .menu a{
+      color:#fff;
+      font-size:15px;
     }
-    .hero {
+    .menu a:hover{ color:#E6ECF5; }
+
+    /* 右側聯絡我們按鈕 */
+    .contact-btn a{
+      background:#fff;
+      color:var(--brand);
+      border-radius:8px;
+      padding:6px 14px;
+      margin-left:24px; /* 與 menu 保持距離 */
+      font-weight:600;
+    }
+    .contact-btn a:hover{
+      background:#E6ECF5;
+      color:var(--brand);
+    }
+
+    /* Hero 區塊 */
+    .hero{
       background:
         linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
         url('assets/HeroBD.png') center/cover no-repeat;
-      border-bottom: 1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
     .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
     .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px}
@@ -118,6 +124,7 @@
     .card .body{padding:14px}
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 
+    /* 表格外觀 */
     table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
     th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
     th{background:#F4F7FB;color:#3B4A63}
@@ -133,57 +140,90 @@
     .foot p,.foot a{color:#C7D2E4}
     .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
 
-    /* 卡片與表格安全內距 */
+    /* 卡片與表格安全內距 + 手機可橫向捲動 */
     .section-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px;
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;
     }
-    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling: touch;}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 
-    /* 手機優化 */
+    /* 手機／平板優化 */
     @media (max-width: 900px){
-      section { padding: 32px 0; }
-      header .nav { height: 56px; }
-      .hero-inner{grid-template-columns: 1fr;gap:20px;padding:36px 0;}
-      .hero h1{ font-size:24px;}
-      .hero p{ font-size:15px;}
-      .hero{background:linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%), url('assets/HeroBD.png') center/cover no-repeat;}
-      .kpi{flex:1 1 calc(50% - 12px);}
-      .cta{flex-direction:column;align-items:stretch;}
-      .btn{text-align:center;}
-      .hero-ill img{display:none;}
-      .features, .grid, .two-col, .foot {grid-template-columns:1fr;}
-      .card img{height:200px;}
-      table{min-width:auto;}
-      th, td{padding:10px 12px;}
-      .nav a{margin-left:12px;font-size:14px;}
+      /* Header 兩排：上 Logo+聯絡、下 menu */
+      .logo img{ height:36px; } /* 手機 LOGO 稍微縮小 */
+      header .nav{
+        flex-wrap:wrap;
+        height:auto;
+        row-gap:10px;
+        padding:8px 0;
+      }
+      header .logo{ order:1; }
+      header .contact-btn{ order:2; margin-left:auto; }
+      header .contact-btn a{ padding:8px 14px; border-radius:10px; }
+      header .menu{
+        order:3;
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        gap:12px;
+        margin-top:4px;
+      }
+      header .menu a{ display:block; padding:10px 6px; font-size:14px; }
+
+      /* 內容區塊 */
+      section{ padding:32px 0; }
+      .hero-inner{ grid-template-columns:1fr; gap:20px; padding:36px 0; }
+      .hero h1{ font-size:24px; }
+      .hero p{ font-size:15px; }
+      .hero{
+        background:
+          linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%),
+          url('assets/HeroBD.png') center/cover no-repeat;
+      }
+      .kpis{ gap:12px; }
+      .kpi{ flex:1 1 calc(50% - 12px); }
+      .cta{ flex-direction:column; align-items:stretch; }
+      .btn{ text-align:center; }
+      .hero-ill img{ display:none; }
+      .features, .grid, .two-col, .foot{ grid-template-columns:1fr; }
+      .card img{ height:200px; object-fit:cover; }
+      table{ min-width:620px; }
+      th,td{ padding:10px 12px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "康錡實業有限公司",
+    "url": "https://lucaschoi1996.github.io/KCReservoir2/",
+    "logo": "https://lucaschoi1996.github.io/KCReservoir2/assets/logo-512.png",
+    "address": {"@type":"PostalAddress","addressCountry":"TW","addressRegion":"新北市","addressLocality":"八里區","streetAddress":"頂寮一街2號"},
+    "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "email": "sales@example.com"}]
+  }
+  </script>
 </head>
+
 <body style="background:var(--bg)">
+  <!-- Header -->
   <header>
     <div class="container nav">
       <div class="logo">
         <img src="assets/logoclean.png" alt="康錡實業 logo" />
         <span>康錡實業有限公司</span>
       </div>
-     <nav class="menu">
-  <a href="#products">產品</a>
-  <a href="#spec">規格</a>
-  <a href="#qa">常見問題</a>
-</nav>
-<div class="contact-btn">
-  <a href="#contact" >聯絡我們</a>
-    </div>
+
+      <nav class="menu">
+        <a href="#products">產品</a>
+        <a href="#spec">規格</a>
+        <a href="#qa">常見問題</a>
+      </nav>
+
+      <div class="contact-btn">
+        <a href="#contact">聯絡我們</a>
+      </div>
     </div>
   </header>
-
-  <!-- 其餘 main、footer 保持不變 -->
-</body>
-</html>
-
 
   <main>
     <!-- Hero -->
@@ -204,7 +244,7 @@
         </div>
         <div class="hero-ill">
           <div class="card">
-            <img src="assets/HeroProductfix.jpg" alt="棉管產品示意" style="height:420px; width:auto;" />
+            <img src="assets/HeroProductfix.jpg" alt="棉管產品示意" />
           </div>
         </div>
       </div>
@@ -348,36 +388,6 @@
       </div>
     </section>
   </main>
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2>聯絡我們</h2>
-        <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議棉管配方與樣品。</p>
-        <div class="two-col">
-          <div class="card" style="padding:16px">
-            <form action="mailto:sales@example.com" method="post" enctype="text/plain">
-              <label>公司/姓名<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>需求與墨水資訊<br />
-                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
-              </label><br /><br />
-              <button class="btn primary" type="submit">送出需求</button>
-              <span class="note">（零成本方案：使用 mailto 提交。若後續要表單收件，可改用 Formspree/Static forms 免費級）</span>
-            </form>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">工廠資訊</h3>
-            <p>
-              康錡實業有限公司<br/>
-              249 新北市八里區頂寮一街2號<br/>
-              Tel：+886-2-2808-4897<br/>
-              Email：fiber@khancheers.com.tw
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <footer>
     <div class="container foot">
@@ -399,6 +409,5 @@
   </footer>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
- 
 </body>
 </html>
