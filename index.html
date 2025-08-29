@@ -14,12 +14,16 @@
       --bg:#F6F8FB;    /* 背景淺灰藍 */
       --line:#E6ECF5;  /* 分隔線 */
       --muted:#6C7A90; /* 次要文字 */
-      --ok:#0F8C64;    /* 強調綠 */
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;color:var(--ink);font-family:-apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+    html,body{
+      margin:0;
+      padding:0;
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    a{text-decoration:none}
 
     /* 全站統一 28px 邊距 */
     .container{
@@ -33,49 +37,52 @@
       position: sticky;
       top: 0;
       background: var(--brand);   /* 深藍背景 */
-      border-bottom: 1px solid var(--line);
       z-index: 50;
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo img{height:28px}
-    .logo span{font-weight:700;letter-spacing:.03em;color:#fff} /* LOGO文字變白 */
 
-    /* 導覽列連結文字 */
-    header .nav a {
-      color: #fff;
-      header .nav a.btn {
-        background: #fff;
-        color: var(--brand);
-        border: none;
-        border-radius: 8px;
-        padding: 6px 12px;
-        }
-
-/* hover/focus 狀態 */
-      header .nav a.btn:hover,
-      header .nav a.btn:focus {
-        background: #E6ECF5;
-        color: var(--brand);
-        text-decoration: none;
-      }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* 左邊 LOGO+menu，右邊按鈕 */
+      height: 64px;
     }
-    header .nav a:hover {
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img{height:28px}
+    .logo span{font-weight:700;letter-spacing:.03em;color:#fff}
+
+    /* 三個選單 */
+    .menu {
+      display: flex;
+      gap: 32px; /* ← 控制三個連結的間距 */
+    }
+    .menu a {
+      color: #fff;
+      font-size: 15px;
+    }
+    .menu a:hover {
       color: #E6ECF5;
     }
 
-    /* header 的按鈕樣式（白底藍字） */
-    header .btn {
+    /* 聯絡我們按鈕 */
+    .contact-btn a {
       background: #fff;
-      color: #124C9C;
-      border: none;
+      color: var(--brand);
       border-radius: 8px;
-      padding:6px 12px;
+      padding: 6px 14px;
+      margin-left: 24px;   /* 與 menu 保持距離 */
+      font-weight: 600;
+      text-decoration: none;
     }
-    header .btn:hover {
+    .contact-btn a:hover {
       background: #E6ECF5;
+      color: var(--brand);
     }
-
     .hero {
       background:
         linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
