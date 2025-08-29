@@ -53,13 +53,20 @@
       align-items: center;
       gap: 10px;
     }
-    .logo img{height:28px}
-    .logo span{font-weight:700;letter-spacing:.03em;color:#fff}
+    .logo img{
+      height: 44px;  /* 桌機版 LOGO */
+      width: auto;
+    }
+    .logo span{
+      font-weight:700;
+      letter-spacing:.03em;
+      color:#fff;
+    }
 
     /* 三個選單 */
     .menu {
       display: flex;
-      gap: 32px; /* ← 控制三個連結的間距 */
+      gap: 32px; /* 控制三個連結的間距 */
     }
     .menu a {
       color: #fff;
@@ -77,91 +84,37 @@
       padding: 6px 14px;
       margin-left: 24px;   /* 與 menu 保持距離 */
       font-weight: 600;
-      text-decoration: none;
     }
     .contact-btn a:hover {
       background: #E6ECF5;
       color: var(--brand);
     }
-    .hero {
-      background:
-        linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
-        url('assets/HeroBD.png') center/cover no-repeat;
-      border-bottom: 1px solid var(--line);
-    }
-    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
-    .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px}
-    .hero p{color:var(--muted);margin:0 0 20px}
-    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
-    .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:150px}
-    .kpi b{display:block;font-size:20px;color:var(--brand)}
-    .cta{display:flex;gap:12px;margin-top:16px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--brand);font-weight:600}
-    .btn.primary{background:var(--brand);color:#fff}
 
-    .hero-ill{display:flex;align-items:center;justify-content:center}
-    .hero-ill .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 30px rgba(18,76,156,.08)}
-    .hero-ill img{height:420px;width:auto;border-radius:12px}
-
-    section{padding:48px 0}
-    h2{font-size:24px;margin:0 0 10px}
-    .sub{color:var(--muted);margin:0 0 26px}
-
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-    .feature h3{margin:0 0 6px;font-size:18px}
-    .feature p{margin:0;color:var(--muted)}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-    .card img{width:100%;height:160px;object-fit:cover}
-    .card .body{padding:14px}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-
-    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
-    th{background:#F4F7FB;color:#3B4A63}
-    tbody tr:last-child td{border-bottom:none}
-
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-
-    .note{font-size:13px;color:var(--muted)}
-
-    footer{background:#0E1420;color:#C7D2E4}
-    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
-    .foot h4{margin:0 0 8px;color:#fff}
-    .foot p,.foot a{color:#C7D2E4}
-    .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
-
-    /* 卡片與表格安全內距 */
-    .section-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px;
-    }
-    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling: touch;}
-
-    /* 手機優化 */
+    /* 手機版 header 調整 */
     @media (max-width: 900px){
-      section { padding: 32px 0; }
-      header .nav { height: 56px; }
-      .hero-inner{grid-template-columns: 1fr;gap:20px;padding:36px 0;}
-      .hero h1{ font-size:24px;}
-      .hero p{ font-size:15px;}
-      .hero{background:linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%), url('assets/HeroBD.png') center/cover no-repeat;}
-      .kpi{flex:1 1 calc(50% - 12px);}
-      .cta{flex-direction:column;align-items:stretch;}
-      .btn{text-align:center;}
-      .hero-ill img{display:none;}
-      .features, .grid, .two-col, .foot {grid-template-columns:1fr;}
-      .card img{height:200px;}
-      table{min-width:auto;}
-      th, td{padding:10px 12px;}
-      .nav a{margin-left:12px;font-size:14px;}
+      .logo img{ height: 36px; } /* LOGO 縮小 */
+      .nav{
+        flex-wrap: wrap;
+        height: auto;
+        row-gap: 10px;
+        padding: 8px 0;
+      }
+      .menu{
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 4px;
+      }
+      .contact-btn{
+        order: 2;
+        margin-left: auto;
+      }
+      .menu a{ font-size:14px; }
     }
   </style>
 </head>
+
 <body style="background:var(--bg)">
   <header>
     <div class="container nav">
@@ -169,14 +122,18 @@
         <img src="assets/logoclean.png" alt="康錡實業 logo" />
         <span>康錡實業有限公司</span>
       </div>
-     <nav class="menu">
-  <a href="#products">產品</a>
-  <a href="#spec">規格</a>
-  <a href="#qa">常見問題</a>
-</nav>
-<div class="contact-btn">
-  <a href="#contact" >聯絡我們</a>
-    </div>
+
+      <!-- 左邊選單 -->
+      <nav class="menu">
+        <a href="#products">產品</a>
+        <a href="#spec">規格</a>
+        <a href="#qa">常見問題</a>
+      </nav>
+
+      <!-- 右邊按鈕 -->
+      <div class="contact-btn">
+        <a href="#contact">聯絡我們</a>
+      </div>
     </div>
   </header>
 
