@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khan Cheers Co., Ltd. | Capillary Reservoir (Ink Reservoir Fibers)</title>
+  <meta name="description" content="Khan Cheers specializes in custom, high-precision capillary reservoirs (ink reservoir fibers) for water- and solvent-based inks—stable ink delivery, tight tolerances, and leakage risk control." />
+  <meta name="theme-color" content="#124C9C" />
+  <link rel="icon" href="../assets/favicon.png" />
+  <!-- hreflang -->
+  <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/" hreflang="zh-Hant" />
+  <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/en/" hreflang="en" />
+  <style>
+    :root{
+      --brand:#124C9C; --ink:#122133; --bg:#F6F8FB; --line:#E6ECF5; --muted:#6C7A90; --ok:#0F8C64;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    a{text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 28px}
+
+    /* Header */
+    header{position:sticky;top:0;background:#0D1A2D;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{height:96px;width:auto}
+    .logo span{font-weight:700;letter-spacing:.03em;color:#fff}
+    .menu{display:flex;gap:24px}
+    .menu a{color:#fff;font-size:15px}
+    .menu a:hover{color:#E6ECF5}
+    .contact-btn a{background:#fff;color:var(--brand);border-radius:8px;padding:6px 14px;margin-left:24px;font-weight:600}
+    .contact-btn a:hover{background:#E6ECF5;color:var(--brand)}
+    .lang a{color:#E6ECF5;font-size:14px;opacity:.9}
+    .lang a:hover{opacity:1;text-decoration:underline}
+
+    /* Hero */
+    .hero{
+      background:
+        linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
+        url('../assets/HeroBD.png') center/cover no-repeat;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
+    .hero h1{font-size:32px;line-height:1.4;margin:0 0 12px}
+    .hero p{line-height:1.3;margin:0 0 20px;color:#000;font-weight:600}
+    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+    .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:150px}
+    .kpi b{display:block;font-size:20px;color:var(--brand)}
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--brand);font-weight:600}
+    .btn.primary{background:var(--brand);color:#fff}
+
+    .hero-ill{display:flex;align-items:center;justify-content:center}
+    .hero-ill .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 30px rgba(18,76,156,.08)}
+    /* portrait-friendly image sizing */
+    .hero-ill img{height:clamp(460px,62vh,720px);width:auto;max-width:100%;border-radius:12px;display:block}
+
+    section{padding:48px 0}
+    h2{font-size:24px;margin:0 0 10px}
+    .sub{color:var(--muted);margin:0 0 26px}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .feature h3{margin:0 0 6px;font-size:18px}
+    .feature p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .card img{width:100%;height:160px;object-fit:cover}
+    .card .body{padding:14px}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+    th{background:#F4F7FB;color:#3B4A63}
+    tbody tr:last-child td{border-bottom:none}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .note{font-size:13px;color:var(--muted)}
+
+    footer{background:#0E1420;color:#C7D2E4}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
+    .foot h4{margin:0 0 8px;color:#fff}
+    .foot p,.foot a{color:#C7D2E4}
+    .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
+
+    .section-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+    /* Mobile */
+    @media (max-width:900px){
+      .logo img{height:110px}
+      header .nav{flex-wrap:wrap;height:auto;row-gap:10px;padding:8px 0}
+      header .logo{order:1}
+      header .contact-btn{order:2;margin-left:auto}
+      header .menu{order:3;width:100%;display:flex;justify-content:space-between;gap:12px;margin-top:4px}
+      header .menu a{display:block;padding:10px 6px;font-size:14px}
+      section{padding:32px 0}
+      .hero-inner{grid-template-columns:1fr;gap:20px;padding:36px 0}
+      .hero h1{font-size:24px}
+      .hero p{font-size:15px}
+      .hero{background:linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%), url('../assets/HeroBD.png') center/cover no-repeat}
+      .kpis{gap:12px}
+      .kpi{flex:1 1 calc(50% - 12px)}
+      .cta{flex-direction:column;align-items:stretch}
+      .btn{text-align:center}
+      .hero-ill img{height:auto;width:100%;max-width:100%}
+      .features,.grid,.two-col,.foot{grid-template-columns:1fr}
+      .card img{height:200px;object-fit:cover}
+      table{min-width:auto}
+      th,td{padding:10px 12px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Khan Cheers Co., Ltd.",
+    "url":"https://lucaschoi1996.github.io/KCReservoir2/en/",
+    "logo":"https://lucaschoi1996.github.io/KCReservoir2/assets/logo-512.png",
+    "address":{"@type":"PostalAddress","addressCountry":"TW","addressRegion":"New Taipei City","addressLocality":"Bali District","streetAddress":"No. 2, Dingliao 1st St."},
+    "contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"sales@example.com"}]
+  }
+  </script>
+</head>
+<body style="background:var(--bg)">
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="../assets/logoclean.png" alt="Khan Cheers logo" />
+        <span>Khan Cheers Co., Ltd.</span>
+      </div>
+
+      <nav class="menu">
+        <a href="#products">Products</a>
+        <a href="#spec">Specifications</a>
+        <a href="#qa">FAQ</a>
+      </nav>
+
+      <div class="contact-btn">
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:8px">
+      <div class="lang"><a href="../">中文（繁體）</a></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>
+            Capillary Reservoir<br>
+            Ink Reservoir Fiber for Pens<br>
+            <span style="color:var(--brand)">High-Precision Customization</span> × <span style="color:var(--brand)">Ink Delivery Solutions</span>
+          </h1>
+          <p>Focused on pen ink reservoirs (water-/solvent-based; dye/pigment). We deliver stable ink flow with tight tolerances, high batch consistency, and tuned fiber blends—reducing leakage and dry-out risks.</p>
+
+          <div class="kpis">
+            <div class="kpi"><b>±0.08 mm</b><span>OD tolerance (typ.)</span></div>
+            <div class="kpi"><b>0.14–0.25 g/cm³</b><span>Bulk density (common)</span></div>
+            <div class="kpi"><b>AC-70 / AC-50 / BC-35</b><span>Multiple fiber blends</span></div>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">Request Samples</a>
+            <a class="btn" href="#spec">Download Specs</a>
+          </div>
+        </div>
+
+        <div class="hero-ill">
+          <div class="card">
+            <img src="../assets/HeroProductfix.jpg" alt="Reservoir fiber product" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section>
+      <div class="container">
+        <h2>Why Us</h2>
+        <p class="sub">From materials to dimensions and flow behavior—we tailor a matching solution for your ink and pen design.</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Multiple Formulations</h3>
+            <p>Polyester fibers with PE film; fiber denier combinations tuned to different ink characteristics.</p>
+          </div>
+          <div class="feature">
+            <h3>Tight Tolerances</h3>
+            <p>In-house GO/NO-GO QC ensures consistent OD and roundness across batches.</p>
+          </div>
+          <div class="feature">
+            <h3>Consistent Mass Production</h3>
+            <p>Process control (cooling water temp, fiber pre-treatment) and tight packaging for lot-to-lot consistency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <div class="container">
+        <h2>Main Products</h2>
+        <p class="sub">We propose suitable reservoir fibers per your target OD/length/density/flow requirements.</p>
+        <div class="grid">
+          <article class="card">
+            <img src="../assets/tmp_watercolor.jpg" alt="Reservoir for water-based inks" />
+            <div class="body">
+              <div class="tag">Water-based / Dye</div>
+              <h3>Reservoir for Water-based Inks</h3>
+              <p class="note">High hydrophilicity and stable backflow, ideal for whiteboard and coloring markers.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/tmp_permanent.jpg" alt="Reservoir for solvent-based inks" />
+            <div class="body">
+              <div class="tag">Solvent-based / Pigment optional</div>
+              <h3>Reservoir for Solvent-based Inks</h3>
+              <p class="note">Anti-swelling structure with film tuning to minimize long-term leakage risk.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/tmp_special.jpg" alt="Custom reservoir" />
+            <div class="body">
+              <div class="tag">Custom</div>
+              <h3>Custom Formulation / Dimensions</h3>
+              <p class="note">Adjustable PE film thickness, fiber ratios, and density—designed for optimal flow.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spec Table -->
+    <section id="spec">
+      <div class="container">
+        <h2>Typical Specifications</h2>
+        <p class="sub">Values below are references. Final specs should be validated with your ink viscosity and pen tolerances.</p>
+        <div class="two-col">
+          <div>
+            <div class="section-card table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Common Range</th>
+                    <th>Customizable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Outer Diameter (OD)</td>
+                    <td>Ø 6.0 – 13.0 mm</td>
+                    <td>Ø 5.0 – 18.0 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Length (L)</td>
+                    <td>70.0 – 100.0 mm</td>
+                    <td>33.0 – 120.0 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Bulk Density</td>
+                    <td>0.17 – 0.20 g/cm³</td>
+                    <td>0.14 – 0.25 g/cm³</td>
+                  </tr>
+                  <tr>
+                    <td>Ink Compatibility</td>
+                    <td>Solvent quick-dry / Water-dye / Water-pigment</td>
+                    <td>Acrylic / Metallic / Glitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">※ Samples and small pilot runs available to help establish data.</p>
+          </div>
+          <div>
+            <div class="section-card">
+              <h3 style="margin-top:0">Downloads / Technical Docs</h3>
+              <ul>
+                <li><a href="#">Company One-pager (PDF)</a></li>
+                <li><a href="#">Common OD & Length Chart (PDF)</a></li>
+                <li><a href="#">Sample Testing Guideline (PDF)</a></li>
+              </ul>
+              <p class="note">Place files under <code>/docs</code> and replace links after upload.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="qa">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q1: Can it handle pigment inks?</h3>
+            <p>Yes. We tune fiber compactness for pigment size/dispersion/viscosity to avoid clogging while keeping backflow.</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q2: How to reduce long-term leakage?</h3>
+            <p>For solvent inks, increase film proportion, optimize end sealing, and enhance summer temperature control & packaging.</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q3: Very small OD possible?</h3>
+            <p>We can go to Ø5 mm. We’ll co-evaluate barrel tolerance, inner wall friction, and tip structure to ensure flow stability.</p>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">Q4: MOQ & Lead Time?</h3>
+            <p>Small pilot runs for standard sizes; mass-production lead time depends on materials and line schedule. Rush orders negotiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p class="sub">Share your ink info (type, viscosity data, base, etc.). We’ll get back with suggested reservoir formulation and samples.</p>
+      <div class="two-col">
+        <div class="card" style="padding:16px">
+          <form action="mailto:sales@example.com" method="post" enctype="text/plain">
+            <label>Company / Name<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+            <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+            <label>Requirements & Ink Info<br />
+              <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+            </label><br /><br />
+            <button class="btn primary" type="submit">Submit</button>
+            <span class="note"></span>
+          </form>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3 style="margin-top:0">Factory Info</h3>
+          <p>
+            Khan Cheers Co., Ltd.<br/>
+            No. 2, Dingliao 1st St., Bali Dist., New Taipei City 249, Taiwan<br/>
+            Tel: +886-2-2808-4897<br/>
+            Email: fiber@khancheers.com.tw
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <h4>About Khan Cheers</h4>
+        <p>We translate material engineering and process control into stable ink performance, solving real problems in whiteboard, permanent, and industrial markers.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#products">Products</a> · <a href="#spec">Specs</a> · <a href="#qa">FAQ</a> · <a href="#contact">Contact</a></p>
+      </div>
+      <div>
+        <h4>Docs</h4>
+        <p><a href="#">Company One-pager</a><br/>
+        <a href="#">Spec Sheet (PDF)</a></p>
+      </div>
+    </div>
+    <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
 
