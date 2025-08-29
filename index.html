@@ -324,6 +324,36 @@
       </div>
     </section>
   </main>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>聯絡我們</h2>
+        <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議棉管配方與樣品。</p>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <form action="mailto:sales@example.com" method="post" enctype="text/plain">
+              <label>公司/姓名<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>需求與墨水資訊<br />
+                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+              </label><br /><br />
+              <button class="btn primary" type="submit">送出需求</button>
+              <span class="note">（零成本方案：使用 mailto 提交。若後續要表單收件，可改用 Formspree/Static forms 免費級）</span>
+            </form>
+          </div>
+          <div class="card" style="padding:16px">
+            <h3 style="margin-top:0">工廠資訊</h3>
+            <p>
+              康錡實業有限公司<br/>
+              249 新北市八里區頂寮一街2號<br/>
+              Tel：+886-2-2808-4897<br/>
+              Email：fiber@khancheers.com.tw
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container foot">
@@ -345,5 +375,6 @@
   </footer>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+ 
 </body>
 </html>
