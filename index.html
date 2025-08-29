@@ -81,10 +81,10 @@
    /* 手機／平板優化 */
 @media (max-width: 900px){
   /* 版面與間距 */
-  .container { padding: 0 28px; }
+  .container { padding: 0 16px; }
   section { padding: 32px 0; }
   header .nav { height: 56px; }
-
+  
   /* HERO：改成單欄，縮小上下內距，文字置前更好讀 */
   .hero-inner{ 
     grid-template-columns: 1fr; 
@@ -110,6 +110,7 @@
   /* 右側示意圖：改為自適應高度，避免超高擠版面；也可直接隱藏 */
   .hero-ill .card{ padding: 10px; }
   .hero-ill img{ 
+    display: none;
     width: 100%; 
     height: auto;      /* 或者：max-height: 380px; */
     border-radius: 10px; 
