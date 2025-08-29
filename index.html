@@ -21,6 +21,9 @@
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    @media (max-width: 900px){
+      .container{ padding:0 28px; }  /* 手機加大到 28px */
+                              }
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
