@@ -78,12 +78,54 @@
     .foot p,.foot a{color:#C7D2E4}
     .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
 
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr}
-      .features,.grid,.two-col,.foot{grid-template-columns:1fr}
-      .card img{height:180px}
-      header .nav{height:56px}
-    }
+   /* 手機／平板優化 */
+@media (max-width: 900px){
+  /* 版面與間距 */
+  .container { padding: 0 16px; }
+  section { padding: 32px 0; }
+  header .nav { height: 56px; }
+
+  /* HERO：改成單欄，縮小上下內距，文字置前更好讀 */
+  .hero-inner{ 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    padding: 36px 0; 
+  }
+  .hero h1{ font-size: 24px; }
+  .hero p{ font-size: 15px; }
+
+  /* HERO 背景圖在手機上再稍微加深一點，避免字被吃掉 */
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%),
+      url('assets/HeroBD.png') center/cover no-repeat;
+  }
+
+  /* KPI 走兩欄、大按鈕更好點 */
+  .kpis{ gap: 12px; }
+  .kpi{ min-width: unset; flex: 1 1 calc(50% - 12px); }
+  .cta{ flex-direction: column; align-items: stretch; }
+  .btn{ text-align: center; }
+
+  /* 右側示意圖：改為自適應高度，避免超高擠版面；也可直接隱藏 */
+  .hero-ill .card{ padding: 10px; }
+  .hero-ill img{ 
+    width: 100%; 
+    height: auto;      /* 或者：max-height: 380px; */
+    border-radius: 10px; 
+  }
+
+  /* 三欄區塊改單欄 */
+  .features, .grid, .two-col, .foot { grid-template-columns: 1fr; }
+  .card img{ height: 200px; object-fit: cover; }
+
+  /* 表格：加外層捲動，避免溢出 */
+  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling: touch; }
+  table{ min-width: 620px; }  /* 保持表格可讀，超出就橫向捲動 */
+
+  /* 導覽列連結間距縮小，避免換行醜 */
+  .nav a{ margin-left: 12px; font-size: 14px; }
+}
   </style>
   <script type="application/ld+json">
   {
