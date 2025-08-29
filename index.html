@@ -6,7 +6,7 @@
   <title>康錡實業有限公司｜Capillary Reservoir 棉芯專業製造</title>
   <meta name="description" content="康錡實業專注於高精度客製化棉管（Capillary Reservoir），提供水性/油性墨水配方適配方案，解決供墨穩定與滲漏問題。" />
   <meta name="theme-color" content="#124C9C" />
-  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="icon" href="assets/favicon.png" />
   <style>
     :root{
       --brand:#124C9C; /* 深藍 */
@@ -20,11 +20,14 @@
     html,body{margin:0;padding:0;color:var(--ink);font-family:-apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
+
+    /* 全站統一 28px 邊距 */
     .container{
-        max-width:1120px;
-        margin:0 auto;
-        padding:0 28px; /* 全站統一 28px */
-              }
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 28px;
+    }
+
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
@@ -35,9 +38,9 @@
     .hero {
       background:
         linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
-        url('/KCReservoir2/assets/HeroBD.png') center/cover no-repeat;
-        border-bottom: 1px solid var(--line);
-          }
+        url('assets/HeroBD.png') center/cover no-repeat;
+      border-bottom: 1px solid var(--line);
+    }
     .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
     .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px}
     .hero p{color:var(--muted);margin:0 0 20px}
@@ -67,6 +70,7 @@
     .card .body{padding:14px}
     .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 
+    /* 表格外觀 */
     table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
     th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
     th{background:#F4F7FB;color:#3B4A63}
@@ -82,55 +86,61 @@
     .foot p,.foot a{color:#C7D2E4}
     .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
 
-   /* 手機／平板優化 */
-@media (max-width: 900px){
-  /* 版面與間距 */
-  section { padding: 32px 0; }
-  header .nav { height: 56px; }
-  
-  /* HERO：改成單欄，縮小上下內距，文字置前更好讀 */
-  .hero-inner{ 
-    grid-template-columns: 1fr; 
-    gap: 20px; 
-    padding: 36px 0; 
-  }
-  .hero h1{ font-size: 24px; }
-  .hero p{ font-size: 15px; }
+    /* 讓表格與技術文件卡片有安全內距 + 手機可橫向捲動 */
+    .section-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+    }
+    .table-wrap{
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
-  /* HERO 背景圖在手機上再稍微加深一點，避免字被吃掉 */
-  .hero{
-    background:
-      linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%),
-      url('assets/HeroBD.png') center/cover no-repeat;
-  }
+    /* 手機／平板優化 */
+    @media (max-width: 900px){
+      section { padding: 32px 0; }
+      header .nav { height: 56px; }
 
-  /* KPI 走兩欄、大按鈕更好點 */
-  .kpis{ gap: 12px; }
-  .kpi{ min-width: unset; flex: 1 1 calc(50% - 12px); }
-  .cta{ flex-direction: column; align-items: stretch; }
-  .btn{ text-align: center; }
+      /* HERO：改單欄、縮內距 */
+      .hero-inner{
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 36px 0;
+      }
+      .hero h1{ font-size: 24px; }
+      .hero p{ font-size: 15px; }
 
-  /* 右側示意圖：改為自適應高度，避免超高擠版面；也可直接隱藏 */
-  .hero-ill .card{ padding: 10px; }
-  .hero-ill img{ 
-    display: none;
-    width: 100%; 
-    height: auto;      /* 或者：max-height: 380px; */
-    border-radius: 10px; 
-  }
+      /* 手機上加深遮罩，提升可讀性 */
+      .hero{
+        background:
+          linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%),
+          url('assets/HeroBD.png') center/cover no-repeat;
+      }
 
-  /* 三欄區塊改單欄 */
-  .features, .grid, .two-col, .foot { grid-template-columns: 1fr; }
-  .card img{ height: 200px; object-fit: cover; }
+      .kpis{ gap: 12px; }
+      .kpi{ min-width: unset; flex: 1 1 calc(50% - 12px); }
+      .cta{ flex-direction: column; align-items: stretch; }
+      .btn{ text-align: center; }
 
-  /* 表格：加外層捲動，避免溢出 */
-  .table-scroll{ overflow-x:auto; -webkit-overflow-scrolling: touch; }
-  table{ min-width: 620px; }  /* 保持表格可讀，超出就橫向捲動 */
+      /* 右側示意圖手機隱藏（更乾淨） */
+      .hero-ill .card{ padding: 10px; }
+      .hero-ill img{ display:none; width:100%; height:auto; border-radius:10px; }
 
-  /* 導覽列連結間距縮小，避免換行醜 */
-  .nav a{ margin-left: 12px; font-size: 14px; }
-}
+      /* 三欄改單欄 */
+      .features, .grid, .two-col, .foot { grid-template-columns: 1fr; }
+      .card img{ height: 200px; object-fit: cover; }
+
+      /* 表格在手機可橫向捲動，避免擠壓 */
+      table{ min-width: 620px; }
+      th, td{ padding:10px 12px; }
+      
+      /* 導覽列字距縮小 */
+      .nav a{ margin-left: 12px; font-size: 14px; }
+    }
   </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -147,7 +157,7 @@
   <header>
     <div class="container nav">
       <div class="logo">
-        <img src="/assets/logo-32.png" alt="康錡實業 logo" />
+        <img src="assets/logo-32.png" alt="康錡實業 logo" />
         <span>康錡實業有限公司</span>
       </div>
       <nav>
@@ -168,7 +178,7 @@
           <p>專注筆用貯墨芯（水性/油性;顏料/染料），以極小公差、高一致性與多纖維配方，實現穩定供墨、降低滲漏與閒置乾涸風險。</p>
           <div class="kpis">
             <div class="kpi"><b>±0.08 mm</b><span>外徑公差（典型）</span></div>
-            <div class="kpi"><b>0.14–0.25 g/cbcm</b><span>體積密度（常用級）</span></div>
+            <div class="kpi"><b>0.14–0.25 g/cm³</b><span>體積密度（常用級）</span></div>
             <div class="kpi"><b>AC-70 / AC-50 / BC-35 </b><span>多種纖維配方</span></div>
           </div>
           <div class="cta">
@@ -213,7 +223,7 @@
         <p class="sub">依據經驗以及客戶要求之標準外徑/長度/密度/供墨需求，提供合適的儲墨棉芯。</p>
         <div class="grid">
           <article class="card">
-            <img src="/assets/p-waterbased.jpg" alt="水性墨水用棉管" />
+            <img src="assets/p-waterbased.jpg" alt="水性墨水用棉管" />
             <div class="body">
               <div class="tag">水性 / 染料</div>
               <h3>水性專用棉芯</h3>
@@ -221,7 +231,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="/assets/p-alcohol.jpg" alt="油性墨水用棉管" />
+            <img src="assets/p-alcohol.jpg" alt="油性墨水用棉管" />
             <div class="body">
               <div class="tag">油性 / 顏料可選</div>
               <h3>油專用棉芯</h3>
@@ -229,7 +239,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="/assets/p-custom.jpg" alt="客製化棉管" />
+            <img src="assets/p-custom.jpg" alt="客製化棉管" />
             <div class="body">
               <div class="tag">客製</div>
               <h3>客製化配方 / 尺寸</h3>
@@ -248,38 +258,38 @@
         <div class="two-col">
           <div>
             <div class="section-card table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>項目</th>
-                  <th>常用級</th>
-                  <th>可客製範圍</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>外徑（OD）</td>
-                  <td>Ø 6.0 - 13 mm</td>
-                  <td>Ø 5.0 – 18 mm</td>
-                </tr>
-                <tr>
-                  <td>長度（L）</td>
-                  <td> 70.0 - 100.0 mm</td>
-                  <td> 33.0 – 120.0 mm</td>
-                </tr>
-                <tr>
-                  <td>體積密度</td>
-                  <td>0.17 – 0.20 g/cbcm</td>
-                  <td>0.14 – 0.20 g/cbcm</td>
-                </tr>
-                <tr>
-                  <td>適配墨水</td>
-                  <td>油性快乾/水性染料/水性顏料</td>
-                  <td>丙烯/金屬色/閃粉筆</td>
-                </tr>
-              </tbody>
-            </table>
-              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>項目</th>
+                    <th>常用級</th>
+                    <th>可客製範圍</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>外徑（OD）</td>
+                    <td>Ø 6.0 - 13 mm</td>
+                    <td>Ø 5.0 – 18 mm</td>
+                  </tr>
+                  <tr>
+                    <td>長度（L）</td>
+                    <td>70.0 - 100.0 mm</td>
+                    <td>33.0 – 120.0 mm</td>
+                  </tr>
+                  <tr>
+                    <td>體積密度</td>
+                    <td>0.17 – 0.20 g/cm³</td>
+                    <td>0.14 – 0.20 g/cm³</td>
+                  </tr>
+                  <tr>
+                    <td>適配墨水</td>
+                    <td>油性快乾 / 水性染料 / 水性顏料</td>
+                    <td>丙烯 / 金屬色 / 閃粉筆</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p class="note">※ 可提供樣品與小批量試產，協助建立數據。</p>
           </div>
           <div>
@@ -317,36 +327,6 @@
           <div class="card" style="padding:16px">
             <h3 style="margin-top:0">Q4：MOQ 與交期？</h3>
             <p>標準尺寸可小量試產；量產交期依材料與產線排程而定，緊急案可協調商議。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2>聯絡我們</h2>
-        <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議棉管配方與樣品。</p>
-        <div class="two-col">
-          <div class="card" style="padding:16px">
-            <form action="mailto:sales@example.com" method="post" enctype="text/plain">
-              <label>公司/姓名<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>需求與墨水資訊<br />
-                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
-              </label><br /><br />
-              <button class="btn primary" type="submit">送出需求</button>
-              <span class="note">（零成本方案：使用 mailto 提交。若後續要表單收件，可改用 Formspree/Static forms 免費級）</span>
-            </form>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">工廠資訊</h3>
-            <p>
-              康錡實業有限公司<br/>
-              249 新北市八里區頂寮一街2號<br/>
-              Tel：+886-2-2808-4897<br/>
-              Email：fiber@khancheers.com.tw
-            </p>
           </div>
         </div>
       </div>
