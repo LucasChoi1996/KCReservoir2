@@ -44,6 +44,21 @@
     /* 導覽列連結文字 */
     header .nav a {
       color: #fff;
+      header .nav a.btn {
+        background: #fff;
+        color: var(--brand);
+        border: none;
+        border-radius: 8px;
+        padding: 6px 12px;
+        }
+
+/* hover/focus 狀態 */
+      header .nav a.btn:hover,
+      header .nav a.btn:focus {
+        background: #E6ECF5;
+        color: var(--brand);
+        text-decoration: none;
+      }
     }
     header .nav a:hover {
       color: #E6ECF5;
@@ -134,7 +149,7 @@
       .hero-ill img{display:none;}
       .features, .grid, .two-col, .foot {grid-template-columns:1fr;}
       .card img{height:200px;}
-      table{min-width:620px;}
+      table{min-width:auto;}
       th, td{padding:10px 12px;}
       .nav a{margin-left:12px;font-size:14px;}
     }
