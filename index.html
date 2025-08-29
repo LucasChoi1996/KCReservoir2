@@ -20,10 +20,11 @@
     html,body{margin:0;padding:0;color:var(--ink);font-family:-apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    @media (max-width: 900px){
-      .container{ padding:0 28px; }  /* 手機加大到 28px */
-                              }
+    .container{
+        max-width:1120px;
+        margin:0 auto;
+        padding:0 28px; /* 全站統一 28px */
+              }
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
@@ -84,7 +85,6 @@
    /* 手機／平板優化 */
 @media (max-width: 900px){
   /* 版面與間距 */
-  .container { padding: 0 16px; }
   section { padding: 32px 0; }
   header .nav { height: 56px; }
   
