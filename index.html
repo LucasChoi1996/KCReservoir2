@@ -90,7 +90,7 @@
       background:#E6ECF5;
       color:var(--brand);
     }
-
+  
     /* Hero 區塊 */
     .hero{
       background:
@@ -152,7 +152,26 @@
       background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;
     }
     .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    #backToTop {
+    display: none;              /* 預設隱藏 */
+    position: fixed;           
+    bottom: 40px;              /* 距離底部 */
+    right: 24px;               /* 距離右側 */
+    z-index: 100;
+    background: var(--brand);  /* 用你的深藍主色 */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: opacity 0.3s;
+    }
 
+    #backToTop:hover {
+    background: #0a3570; /* hover 顏色深一點 */
+    }
     /* 手機／平板優化 */
     @media (max-width: 900px){
       /* Header 兩排：上 Logo+聯絡、下 menu */
@@ -466,6 +485,25 @@
     </div>
     <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
   </footer>
+    <!-- 回到頂端按鈕 -->
+    <button id="backToTop" title="回到頂端">↑ TOP</button>
+
+    <script>
+      // 監聽捲動事件，超過 200px 才顯示
+      window.onscroll = function() {
+      let btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+        } else {
+      btn.style.display = "none";
+      }
+    };
+
+      // 點擊回到頂端
+      document.getElementById("backToTop").onclick = function() {
+      window.scrollTo({ ▲ top ▲: 0, behavior: 'smooth' });
+    };
+    </script>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
