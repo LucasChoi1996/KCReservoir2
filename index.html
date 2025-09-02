@@ -401,30 +401,24 @@
         <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議毛細芯配方與樣品。</p>
         <div class="two-col">
           <div class="card" style="padding:16px">
-           <form
-  action="https://formspree.io/f/xkgvvokp"
-  method="POST"
->
-  <label>
-    公司名稱:
-    <input type="Company" name="Company">
-  </label>
-  <label>
-    姓名及職稱:
-    <input type="Namenpost" name="Namenpost">
-  </label>
-    <label>
-    Email :
-    <textarea name="message"></textarea>
-  </label>
-  <label>
-    需求 :
-    <textarea name="RFI"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+  <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>聯絡我們</h2>
+        <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議毛細芯配方與樣品。</p>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <form action="https://formspree.io/f/xkgvvokp" method="post" enctype="text/plain">
+              <label>公司/姓名<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>需求與墨水資訊<br />
+                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+              </label><br /><br />
+              <button class="btn primary" type="submit">送出需求</button>
+              <span class="note"> </span>
+            </form>
           </div>
+       
           <div class="card" style="padding:16px">
             <h3 style="margin-top:0">工廠資訊</h3>
             <p>
