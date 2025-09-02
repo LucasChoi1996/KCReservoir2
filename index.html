@@ -455,13 +455,11 @@
               Email：<a href="mailto:fiber@khancheers.com.tw">fiber@khancheers.com.tw</a><br/>
             </p>
              <!-- Google Map -->
-              <iframe 
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7224.673606376047!2d121.45539483599852!3d25.124301722427017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af64f32dc8a5%3A0x19f997b966ecb1ce!2zMjQ55paw5YyX5biC5YWr6YeM5Y2A6aCC5a-u5LiA6KGXMuiZnw!5e0!3m2!1szh-TW!2stw!4v1756802210779!5m2!1szh-TW!2stw" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7224.673606376047!2d121.45539483599852!3d25.124301722427017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af64f32dc8a5%3A0x19f997b966ecb1ce!2zMjQ55paw5YyX5biC5YWr6YeM5Y2A6aCC5a-u5LiA6KGXMuiZnw!5e0!3m2!1szh-TW!2stw!4v1756802210779!5m2!1szh-TW!2stw" 
                 width=100% height="450" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </iframe>
           </div>
         </div>
       </div>
@@ -486,24 +484,22 @@
     <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
     
     <!-- 回到頂端按鈕 -->
-    <button id="backToTop" title="回到頂端">↑ TOP</button>
+    <!-- 回到頂端按鈕 -->
+<button id="backToTop" title="回到頂端">▲ TOP</button>
 
-    <script>
-      // 監聽捲動事件，超過 200px 才顯示
-      window.onscroll = function() {
-      let btn = document.getElementById("backToTop");
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      btn.style.display = "block";
-        } else {
-      btn.style.display = "none";
-      }
-    };
+<script>
+  // 顯示/隱藏按鈕
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('backToTop');
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    btn.style.display = (y > 200) ? 'block' : 'none';
+  });
 
-      // 點擊回到頂端
-      document.getElementById("backToTop").onclick = function() {
-      window.scrollTo({ ▲ top ▲: 0, behavior: 'smooth' });
-    };
-    </script>
+  // 平滑回頂
+  document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
