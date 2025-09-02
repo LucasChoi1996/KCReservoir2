@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/" hreflang="ZH" />
   <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/EN/" hreflang="EN" />  
   <meta charset="utf-8" />
@@ -407,6 +408,10 @@
               <label>需求與墨水資訊<br />
                 <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
               </label><br /><br />
+              
+              <!-- reCAPTCHA 區塊 -->
+              <div class="g-recaptcha" data-sitekey="你的SiteKey"></div><br>
+
               <button class="btn primary" type="submit">送出需求</button>
               <span class="note"> </span>
             </form>
