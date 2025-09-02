@@ -163,7 +163,12 @@
       .logo span { font-size:24px; font-weight:700; }
       header .logo{ order:1; }
       header .contact-btn{ order:2; margin-left:auto; }
-      header .contact-btn a{ padding:8px 14px; border-radius:10px; }
+      header .contact-btn a{ padding:8px 14px; padding-left: 16px;
+    padding-right: 16px; border-radius:10px; }
+      header .container{
+        padding-left: calc(40px + env(safe-area-inset-left));
+        padding-right: calc(40px + env(safe-area-inset-right));
+                       }
       header .menu{
         order:3;
         width:100%;
@@ -172,7 +177,8 @@
         gap:12px;
         margin-top:4px;
       }
-      header .menu a{ display:block; padding:10px 8px; font-size:22px; font-weight:600; }
+      header .menu a{ display:block; padding:10px 8px; padding-left: 16px;
+    padding-right: 16px; font-size:22px; font-weight:600; }
 
       /* Content */
       section[id]{ scroll-margin-top:190px; }
@@ -400,7 +406,7 @@
   </main>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact us">
     <div class="container">
       <h2>Contact Us</h2>
       <p class="sub">Share your ink info (type, viscosity, base, etc.). We’ll propose a matching reservoir formulation and samples.</p>
