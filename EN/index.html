@@ -149,9 +149,28 @@
     /* Card & table safe padding + horizontal scroll on mobile */
     .section-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
     .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-     #backToTop:hover {
-        background: #0a3570; /* hover 顏色深一點 */
-        }
+        #backToTop {
+            display: none;              /* 預設隱藏 */
+            position: fixed;           
+            bottom: 40px;              /* 距離底部 */
+            right: 24px;               /* 距離右側 */
+            z-index: 100;
+            background: var(--brand);  /* 用你的深藍主色 */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: opacity 0.3s;
+            }
+
+    #backToTop:hover {
+            background: #0a3570; /* hover 顏色深一點 */
+            }
+    /* 手機／平板優化 */
+
     /* Mobile / tablet */
     @media (max-width: 900px){
       /* Header 2 rows: top logo+buttons, bottom menu */
@@ -442,7 +461,25 @@
       </div>
     </div>
   </section>
-    <!-- 回到頂端按鈕 -->
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <h4>About Khan Cheers</h4>
+        <p>We turn material engineering and process control into stable ink performance, solving real-world issues for whiteboard, permanent, and industrial markers.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#products">Products</a>・<a href="#spec">Specs</a>・<a href="#qa">FAQ</a>・<a href="#contact">Contact</a></p>
+      </div>
+      <div>
+        <h4>Documents</h4>
+        <p><a href="#">Company Profile (PDF)</a><br/>
+        <a href="#">Specifications (PDF)</a></p>
+      </div>
+    </div>
+    <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
+        <!-- 回到頂端按鈕 -->
     <!-- 回到頂端按鈕 -->
 <button id="backToTop" title="回到頂端">▲ TOP</button>
 
@@ -462,28 +499,6 @@
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent=new Date().getFullYear()
-  </script>
-  <footer>
-    <div class="container foot">
-      <div>
-        <h4>About Khan Cheers</h4>
-        <p>We turn material engineering and process control into stable ink performance, solving real-world issues for whiteboard, permanent, and industrial markers.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <p><a href="#products">Products</a>・<a href="#spec">Specs</a>・<a href="#qa">FAQ</a>・<a href="#contact">Contact</a></p>
-      </div>
-      <div>
-        <h4>Documents</h4>
-        <p><a href="#">Company Profile (PDF)</a><br/>
-        <a href="#">Specifications (PDF)</a></p>
-      </div>
-    </div>
-    <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
-     
 
 </body>
 </html>
