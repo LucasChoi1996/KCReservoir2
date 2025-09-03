@@ -13,7 +13,6 @@
   <style>
     :root{
       --brand:#124C9C; /* 深藍 */
-      --headerC:#FBFCF8 /* 標題珍珠白*/
       --ink:#122133;   /* 字色深藍灰 */
       --bg:#F6F8FB;    /* 背景淺灰藍 */
       --line:#E6ECF5;  /* 分隔線 */
@@ -41,7 +40,7 @@
     header{
       position:sticky;
       top:0;
-      background:#FBFCF8;
+      background:#0D1A2D;
       z-index:50;
     }
     .nav{
@@ -73,23 +72,23 @@
       gap:24px; /* 三個連結的間距 */
     }
     .menu a{
-      color:#124C9C;
+      color:#fff;
       font-size:15px;
     }
-    .menu a:hover{ color:#124C9C; }
+    .menu a:hover{ color:#E6ECF5; }
 
     /* 右側聯絡我們按鈕 */
     .contact-btn a{
-      background:#124C9C;
-      color:#FFF;
+      background:#fff;
+      color:var(--brand);
       border-radius:8px;
       padding:6px 14px;
       margin-left:24px; /* 與 menu 保持距離 */
       font-weight:600;
     }
     .contact-btn a:hover{
-      background:#124C9C;
-      color:#FFF;
+      background:#E6ECF5;
+      color:var(--brand);
     }
   
     /* Hero 區塊 */
