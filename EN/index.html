@@ -149,7 +149,9 @@
     /* Card & table safe padding + horizontal scroll on mobile */
     .section-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
     .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-
+     #backToTop:hover {
+        background: #0a3570; /* hover 顏色深一點 */
+        }
     /* Mobile / tablet */
     @media (max-width: 900px){
       /* Header 2 rows: top logo+buttons, bottom menu */
@@ -458,6 +460,26 @@
       </div>
     </div>
     <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
+     
+    <!-- 回到頂端按鈕 -->
+    <!-- 回到頂端按鈕 -->
+<button id="backToTop" title="回到頂端">▲ TOP</button>
+
+<script>
+  // 顯示/隱藏按鈕
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('backToTop');
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    btn.style.display = (y > 200) ? 'block' : 'none';
+  });
+
+  // 平滑回頂
+  document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 
   <script>
