@@ -264,8 +264,8 @@
               <span style="color:var(--brand)">High-Precision Customization</span> × <span style="color:var(--brand)">Ink Supply Solutions</span></h1>
           <p><b>Focused on pen reservoir cores</b> (water/solvent; dye/pigment). With stable quality, high consistency, and multiple fiber formulations, we ensure smooth ink delivery, reduce leakage, and mitigate drying during storage.</p>
           <div class="kpis">
-            <div class="kpi"><b>±0.08 mm</b><span>OD Tolerance</span></div>
-            <div class="kpi"><b>±0.7 mm</b><span>Length Tolerance</span></div>
+            <div class="kpi"><b>±0.15 mm</b><span>OD Tolerance</span></div>
+            <div class="kpi"><b>±1.0 mm</b><span>Length Tolerance</span></div>
             <div class="kpi"><b>0.14–0.25 g/cm³</b><span>Fiber Density</span></div>
             <div class="kpi"><b>AC-70 / AC-50 / BC-35</b><span>Multiple Formulations</span></div>
           </div>
@@ -421,19 +421,24 @@
     </section>
   </main>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p class="sub">Share your ink info (type, viscosity, base, etc.). We’ll propose a matching reservoir formulation and samples.</p>
-      <div class="two-col">
-        <div class="card" style="padding:16px">
-          <form action="https://formspree.io/f/xkgvvokp" method="post">
-            <label>Company / Name<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-            <label>Email<br /><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-            <label>Request & Ink Info<br />
-              <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
-            </label><br /><br />
+ <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p class="sub">Share your ink info (type, viscosity, base, etc.). We’ll propose a matching reservoir formulation and samples.</p>
+        <div class="two-col">
+          <div class="card" style="padding:16px">
+            <form action="https://formspree.io/f/xkgvvokp" method="post">
+              <label>Company / Name<br /><input required name="company" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Mr/Ms<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Email Address<br /><input required name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <br /><p>Required Specification：</p><br />
+              <label>Outer Diameter (mm) <input required name="dia" style="width:20%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label>
+              <label>Length (mm) <input required name="len" style="width:20%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Ink Type <input required name="ink" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
+              <label>Note<br />
+                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+              </label><br /><br />
 
             <!-- reCAPTCHA -->
             <div class="g-recaptcha" data-sitekey="6LfoK7srAAAAACb8qdnZTU4s4TdIFbEoZ33ZsHuT"></div><br>
