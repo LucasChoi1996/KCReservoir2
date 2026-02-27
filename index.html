@@ -2,227 +2,15 @@
 <html lang="zh-Hant">
 <head>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/" hreflang="ZH" />
-  <link rel="alternate" href="https://lucaschoi1996.github.io/KCReservoir2/EN/" hreflang="EN" />  
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>康錡實業有限公司｜Capillary Reservoir 毛細芯專業製造</title>
   <meta name="description" content="康錡實業專注於高精度客製化毛細芯（Capillary Reservoir），提供水性/油性墨水配方適配方案，解決供墨穩定與滲漏問題。" />
   <meta name="theme-color" content="#124C9C" />
   <link rel="icon" href="assets/favicon.png" />
-  <style>
-    :root{
-      --brand:#124C9C; /* 深藍1 */
-      --ink:#122133;   /* 字色深藍灰 */
-      --bg:#F6F8FB;    /* 背景淺灰藍 */
-      --line:#E6ECF5;  /* 分隔線 */
-      --muted:#6C7A90; /* 次要文字 */
-      --ok:#0F8C64;    /* 強調綠 */
-    }
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      color:var(--ink);
-      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{text-decoration:none}
-
-    /* 全站統一 28px 邊距 */
-    .container{
-      max-width:1120px;
-      margin:0 auto;
-      padding:0 28px;
-    }
-
-    /* 深藍色導覽列 */
-    header{
-      position:sticky;
-      top:0;
-      background:#0D1A2D;
-      z-index:50;
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between; /* 左 LOGO + menu / 右 按鈕 */
-      height:64px;
-    }
-
-    /* LOGO */
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .logo img{
-      height:48px; /* 桌機 LOGO 大小 */
-      width:auto;
-    }
-    .logo span{
-      font-weight:700;
-      letter-spacing:.03em;
-      color:#fff;
-    }
-
-    /* 左側三個選單 */
-    .menu{
-      display:flex;
-      gap:24px; /* 三個連結的間距 */
-    }
-    .menu a{
-      color:#fff;
-      font-size:15px;
-    }
-    .menu a:hover{ color:#E6ECF5; }
-
-    /* 右側聯絡我們按鈕 */
-    .contact-btn a{
-      background:#fff;
-      color:var(--brand);
-      border-radius:8px;
-      padding:6px 14px;
-      margin-left:24px; /* 與 menu 保持距離 */
-      font-weight:600;
-    }
-    .contact-btn a:hover{
-      background:#E6ECF5;
-      color:var(--brand);
-    }
-  
-    /* Hero 區塊 */
-    .hero{
-      background:
-        linear-gradient(180deg, rgba(249,251,255,0.65) 0%, rgba(242,246,252,0.65) 100%),
-        url('assets/HeroBD.png') center/cover no-repeat;
-      border-bottom:1px solid var(--line);
-    }
-    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:56px 0}
-    .hero h1{font-size:32px;line-height:1.4;margin:0 0 12px}
-    .hero p{line-height:1.3;margin:0 0 20px}
-    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
-    .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:150px}
-    .kpi b{display:block;font-size:20px;color:var(--brand)}
-    .cta{display:flex;gap:12px;margin-top:16px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--brand);font-weight:600}
-    .btn.primary{background:var(--brand);color:#fff}
-
-    .hero-ill{display:flex;align-items:center;justify-content:center}
-    .hero-ill .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 6px 30px rgba(18,76,156,.08)}
-    .hero-ill img{min-height:400px;width:auto;border-radius:12px}
-    /* 捲動錨點修正，避免 sticky header 蓋住標題 */
-  section[id] {
-  scroll-margin-top: 110px; /* 依照 header 高度調整，可用 64~80px */
-              }
-
-    section{padding:48px 0}
-    h2{font-size:24px;margin:0 0 10px}
-    .sub{color:var(--muted);margin:0 0 26px}
-
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-    .feature h3{margin:0 0 6px;font-size:18px}
-    .feature p{margin:0;color:var(--muted)}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-    .card img{width:100%;height:160px;object-fit:cover}
-    .card .body{padding:14px}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-
-    /* 表格外觀 */
-    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
-    th{background:#F4F7FB;color:#3B4A63}
-    tbody tr:last-child td{border-bottom:none}
-
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-
-    .note{font-size:13px;color:var(--muted)}
-
-    footer{background:#0E1420;color:#C7D2E4}
-    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
-    .foot h4{margin:0 0 8px;color:#fff}
-    .foot p,.foot a{color:#C7D2E4}
-    .copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7}
-
-    /* 卡片與表格安全內距 + 手機可橫向捲動 */
-    .section-card{
-      background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;
-    }
-    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    #backToTop {
-    display: none;              /* 預設隱藏 */
-    position: fixed;           
-    bottom: 40px;              /* 距離底部 */
-    right: 24px;               /* 距離右側 */
-    z-index: 100;
-    background: var(--brand);  /* 用你的深藍主色 */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: opacity 0.3s;
-    }
-
-    #backToTop:hover {
-    background: #0a3570; /* hover 顏色深一點 */
-    }
-    /* 手機／平板優化 */
-    @media (max-width: 900px){
-      /* Header 兩排：上 Logo+聯絡、下 menu */
-      
-      .logo img{ height:80px; } /* 手機 LOGO 稍微放大 */
-      header .nav{
-        flex-wrap:wrap;
-        height:auto;
-        row-gap:10px;
-        padding:8px 0;
-      }
-      .logo span {
-    font-size: 24px;   /* 預設 15px 左右，這裡放大 */
-    font-weight: 700;  /* 加粗讓可讀性更好 */
-                 }
-      header .logo{ order:1; }
-      header .contact-btn{ order:2; margin-left:auto; }
-      header .contact-btn a{ padding:8px 14px; border-radius:10px; }
-      header .menu{
-        order:3;
-        width:100%;
-        display:flex;
-        justify-content:space-between;
-        gap:12px;
-        margin-top:4px;
-      }
-      header .menu a{ display:block; padding:10px 8px; font-size:22px; font-weight:600; }
-
-      /* 內容區塊 */
-      section[id] { scroll-margin-top: 190px; }
-      section{ padding:32px 0; }
-      .hero-inner{ grid-template-columns:1fr; gap:20px; padding:36px 40px; }
-      .hero h1{ font-size:24px; }
-      .hero p{ font-size:15px; }
-      .hero{
-        background:
-          linear-gradient(180deg, rgba(249,251,255,0.78) 0%, rgba(242,246,252,0.78) 100%),
-          url('assets/HeroBD.png') center/cover no-repeat;
-      }
-      .kpis{ gap:12px; }
-      .kpi{ flex:1 1 calc(50% - 12px); }
-      .cta{ flex-direction:column; align-items:stretch; }
-      .btn{ text-align:center; }
-      .hero-ill img{ display:none; }
-      .features, .grid, .two-col, .foot{ grid-template-columns:1fr; }
-      .card img{ height:200px; object-fit:cover; }
-      table{ min-width:auto; }
-      th,td{ padding:10px 12px; }
-    }
-  </style>
-
+  <!-- Schema 更新為台北地址 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -230,284 +18,125 @@
     "name": "康錡實業有限公司",
     "url": "https://lucaschoi1996.github.io/KCReservoir2/",
     "logo": "https://lucaschoi1996.github.io/KCReservoir2/assets/logo-512.png",
-    "address": {"@type":"PostalAddress","addressCountry":"TW","addressRegion":"新北市","addressLocality":"八里區","streetAddress":"頂寮一街2號"},
-    "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "email": "sales@example.com"}]
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "TW",
+      "addressRegion": "台北市",
+      "addressLocality": "中山區",
+      "streetAddress": "建國北路一段156號四樓"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "fiber@khancheers.com.tw"
+    }]
   }
   </script>
+
+<style>
+:root{
+  --brand:#124C9C;
+  --ink:#122133;
+  --bg:#F6F8FB;
+  --line:#E6ECF5;
+  --muted:#6C7A90;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+header{background:#0D1A2D;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:48px}
+.logo span{color:#fff;font-weight:700}
+.menu{display:flex;gap:24px}
+.menu a{color:#fff}
+.contact-btn a{background:#fff;color:var(--brand);padding:6px 14px;border-radius:8px;margin-left:10px;font-weight:600}
+
+section{padding:48px 0}
+h2{margin-bottom:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+footer{background:#0E1420;color:#C7D2E4;margin-top:40px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:28px 0}
+.copy{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:13px;color:#93A1B7;text-align:center}
+
+#backToTop{
+  display:none;position:fixed;bottom:40px;right:24px;
+  background:var(--brand);color:#fff;border:none;
+  padding:10px 16px;border-radius:8px;cursor:pointer;
+}
+</style>
 </head>
 
-<body style="background:var(--bg)">
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-     <a href="#" class="logo">
-      <img src="assets/KC_LOGO_circle.png" alt="康錡實業 logo" />
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="assets/KC_LOGO_circle.png" alt="康錡實業 logo">
       <span>康錡實業有限公司</span>
-      </a>
-
-      <nav class="menu">
-        <a href="#products">產品</a>
-        <a href="#spec">規格</a>
-        <a href="#qa">常見問題</a>
-      </nav>
-
-      <div class="contact-btn">
-        <a href="EN/">English</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
     </div>
-  </header>
+    <nav class="menu">
+      <a href="#contact">聯絡我們</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <h1>Capillary Reservoir <br>
-              儲墨毛細芯<br>
-              <span style="color:var(--brand)">高精度客製</span> × <span style="color:var(--brand)">供墨解決方案</span></h1>
-          <p>專注筆用貯墨芯（水性/油性;顏料/染料），以穩定品質、高一致性與多種纖維配方，實現穩定供墨、降低滲漏與閒置乾涸風險。</p>
-          <div class="kpis">
-            <div class="kpi"><b>±0.20 mm</b><span>外徑公差</span></div>
-            <div class="kpi"><b>±1.0 mm</b><span>長度公差</span></div>
-            <div class="kpi"><b>0.14–0.25 g/cm³</b><span>纖維密度</span></div>
-            <div class="kpi"><b>AC-70 / AC-50 / BC-35 </b><span>數種纖維配方</span></div>
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#contact">索取樣品</a>
-            <a class="btn" href="#spec">檢視規格</a>
-          </div>
-        </div>
-        <div class="hero-ill">
-          <div class="card">
-            <img src="assets/HeroProductfix.jpg" alt="毛細芯產品示意" />
-          </div>
-        </div>
-      </div>
-    </section>
+<main>
 
-    <!-- Features -->
-    <section>
-      <div class="container">
-        <h2>我們的優勢</h2>
-        <p class="sub">從材料、尺寸到供墨流暢性，針對您的墨水與筆結構提供匹配方案。</p>
-        <div class="features">
-          <div class="feature">
-            <h3>多配方精准對應</h3>
-            <p>聚酯纖維＋PE膜、搭配不同工序組合纖維，對應市面上不同特性之墨水。</p>
-          </div>
-          <div class="feature">
-            <h3>穩定品質</h3>
-            <p>廠內實施嚴格品檢標準（GO/NO-GO）確保外徑與圓度一致。</p>
-          </div>
-          <div class="feature">
-            <h3>一致性量產</h3>
-            <p>夏季循環水溫控、纖維預處理與緊密的包裝，務求批次間品質一致。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="contact">
+  <div class="container">
+    <h2>公司資訊</h2>
+    <div class="two-col">
 
-    <!-- Products -->
-    <section id="products">
-      <div class="container">
-        <h2>主要產品</h2>
-        <p class="sub">依據經驗以及客戶要求之標準外徑/長度/密度/供墨需求，提供合適的儲墨毛細芯。</p>
-        <div class="grid">
-          <article class="card">
-            <img src="assets/tmp_watercolor.jpg" alt="水性墨水用毛細芯" />
-            <div class="body">
-              <div class="tag">水性 / 染料</div>
-              <h3>水性墨水專用毛細芯</h3>
-              <p class="note">高親水性與穩定回墨，適用白板筆、彩繪筆等。</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="assets/tmp_permanent.jpg" alt="油性墨水用毛細芯" />
-            <div class="body">
-              <div class="tag">油性 / 顏料可選</div>
-              <h3>油性墨水專用毛細芯</h3>
-              <p class="note">抗溶脹結構與膜材搭配，長期儲存滲漏風險低。</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="assets/tmp_special.jpg" alt="客製化毛細芯" />
-            <div class="body">
-              <div class="tag">客製</div>
-              <h3>客製化配方 / 尺寸毛細芯</h3>
-              <p class="note">含PE膜厚度、纖維配比與密度可調，以供墨流暢度為目標設計。</p>
-            </div>
-          </article>
-        </div>
+      <div class="card">
+        公司名稱：康錡實業有限公司<br>
+        統一編號：80505122<br>
+        公司地址：台北市中山區建國北路一段156號四樓<br>
+        電話：+886-(0)2-2808-4897<br>
+        Email：<a href="mailto:fiber@khancheers.com.tw">fiber@khancheers.com.tw</a>
       </div>
-    </section>
 
-    <!-- Spec Table -->
-    <section id="spec">
-      <div class="container">
-        <h2>常見規格</h2>
-        <p class="sub">以下為參考值；實際以您的墨水黏度、筆尖/筆管公差共同驗證為準。</p>
-        <div class="four-col">
-          <div>
-            <div class="section-card table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>項目</th>
-                    <th>常用級</th>
-                    <th>可客製範圍</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>外徑（OD）</td>
-                    <td>Ø 6.0 - 13.0 mm</td>
-                    <td>Ø 5.0 – 18.0 mm</td>
-                  </tr>
-                  <tr>
-                    <td>長度（L）</td>
-                    <td>70.0 - 100.0 mm</td>
-                    <td>33.0 – 120.0 mm</td>
-                  </tr>
-                  <tr>
-                    <td>體積密度</td>
-                    <td>0.17 – 0.20 g/cm³</td>
-                    <td>0.14 – 0.25 g/cm³</td>
-                  </tr>
-                  <tr>
-                    <td>適配墨水</td>
-                    <td>油性快乾 / 水性染料 / 水性顏料</td>
-                    <td>丙烯 / 金屬色 / 閃粉筆</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="note">※ 可提供樣品與小批量試產，協助建立數據。</p>
-          </div>
-          <!-- <div>
-            <div class="section-card">
-              <h3 style="margin-top:0">下載 / 技術文件</h3>
-              <ul>
-                <li><a href="#">公司簡介（PDF）</a></li>
-                <li><a href="#">常見外徑與長度對照表（PDF）</a></li>
-                <li><a href="#">樣品測試流程建議（PDF）</a></li>
-              </ul>
-              <p class="note">檔案可放在 <code>/docs</code> </p>
-            </div>
-          </div>
-        </div>
+      <div class="card">
+        <!-- Google Map 更新版 -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.483248931144!2d121.53383807537699!3d25.051605077804922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a960329fe221%3A0xb28af26b3c69e6e!2zMTA06Ie65YyX5biC5Lit5bGx5Y2A5bu65ZyL5YyX6Lev5LiA5q61MTU26Jmf5Zub!5e0!3m2!1szh-TW!2stw!4v1772192368518!5m2!1szh-TW!2stw"
+          width="100%"
+          height="450"
+          style="border:0;border-radius:12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-    </section> -->
 
-    <!-- Q&A -->
-    <section id="qa">
-      <div class="container">
-        <h2>常見問題</h2>
-        <div class="two-col">
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">Q1：顏料墨水可以用嗎？</h3>
-            <p>可以。我們會依顏料粒徑、分散體系與黏度搭配較緊實的纖維結構，避免堵塞並維持回墨。</p>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">Q2：貯墨長時間存放會變質嗎？</h3>
-            <p>Khan Cheers的貯墨墨芯採用100%聚酯纖維和聚乙烯（PE）膜製成，吸水率僅0.4%。在正常情況下，不會出現吸濕或發霉的情況。</p>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">Q3：能否做非常細的外徑？</h3>
-            <p>可做到 Ø5 mm 外徑，但需同步評估筆管公差、內壁摩擦與筆尖結構以確保供墨穩定。</p>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">Q4：MOQ 與交期？</h3>
-            <p>標準尺寸可小量試產，正式起訂量為20箱；量產交期依材料與產線排程而定，一般為訂單簽回後起算45個工作天。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2>聯絡我們</h2>
-        <p class="sub">歡迎提供墨水資訊（墨水種類、黏度數據、基底等），我們會回覆建議毛細芯配方與樣品。</p>
-        <div class="two-col">
-          <div class="card" style="padding:16px">
-            <form action="https://formspree.io/f/xkgvvokp" method="post">
-              <label>公司名稱<br /><input required name="company" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>聯絡人<br /><input required name="name" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>電郵地址<br /><input required name="email" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <br /><p>需求產品規格：</p><br />
-              <label>直徑 (mm) <input required name="dia" style="width:20%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label>
-              <label>長度 (mm) <input required name="len" style="width:20%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>墨水類型 <input required name="ink" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px" /></label><br /><br />
-              <label>說明<br />
-                <textarea name="message" rows="6" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
-              </label><br /><br />
-              
-              <!-- reCAPTCHA 區塊 -->
-              <div class="g-recaptcha" data-sitekey="6LfoK7srAAAAACb8qdnZTU4s4TdIFbEoZ33ZsHuT"></div><br>
-
-              <button class="btn primary" type="submit">送出需求</button>
-              <span class="note"> </span>
-            </form>
-          </div>
-          <div class="card" style="padding:16px">
-            <h3 style="margin-top:0">工廠資訊</h3>
-            <p>
-              公司名稱：康錡實業有限公司<br/>
-              統一編號：80505122<br/>
-              工廠地址：249 新北市八里區頂寮一街2號<br/>
-              電話號碼：+886-(0)2-2808-4897<br/>
-              Email：<a href="mailto:fiber@khancheers.com.tw">fiber@khancheers.com.tw</a><br/>
-            </p>
-             <!-- Google Map -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7224.673606376047!2d121.45539483599852!3d25.124301722427017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af64f32dc8a5%3A0x19f997b966ecb1ce!2zMjQ55paw5YyX5biC5YWr6YeM5Y2A6aCC5a-u5LiA6KGXMuiZnw!5e0!3m2!1szh-TW!2stw!4v1756802210779!5m2!1szh-TW!2stw" 
-                width=100% height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="container foot">
-      <div>
-        <h4>關於康錡</h4>
-        <p>我們致力於將材料工程與製程細節轉化為穩定的供墨表現，協助品牌解決白板筆、記號筆、工業筆等場景中的實際痛點。</p>
-      </div>
-      <div>
-        <h4>快速連結</h4>
-        <p><a href="#products">產品</a>・<a href="#spec">規格</a>・<a href="#qa">FAQ</a>・<a href="#contact">聯絡</a></p>
-      </div>
-      <div>
-        <h4>文件</h4>
-        <p><a href="#">公司簡介 PDF</a><br/>
-        <a href="#">規格表 PDF</a></p>
-      </div>
     </div>
-    <div class="container copy">© <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.</div>
-    
-    <!-- 回到頂端按鈕 -->
-    <!-- 回到頂端按鈕 -->
-<button id="backToTop" title="回到頂端">▲ TOP</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container copy">
+    © <span id="y"></span> Khan Cheers Co., Ltd. All rights reserved.
+  </div>
+</footer>
+
+<button id="backToTop">▲ TOP</button>
 
 <script>
-  // 顯示/隱藏按鈕
-  window.addEventListener('scroll', function () {
-    const btn = document.getElementById('backToTop');
-    const y = window.pageYOffset || document.documentElement.scrollTop;
-    btn.style.display = (y > 200) ? 'block' : 'none';
-  });
+document.getElementById('y').textContent=new Date().getFullYear();
 
-  // 平滑回頂
-  document.getElementById('backToTop').addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+window.addEventListener('scroll', function(){
+  const btn=document.getElementById('backToTop');
+  btn.style.display = window.scrollY>200?'block':'none';
+});
+document.getElementById('backToTop').onclick=function(){
+  window.scrollTo({top:0,behavior:'smooth'});
+};
 </script>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-  </footer>
-    
 </body>
 </html>
